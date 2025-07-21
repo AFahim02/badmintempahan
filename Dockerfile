@@ -26,10 +26,11 @@ RUN chmod -R 755 /var/www
 RUN composer install --optimize-autoloader --no-dev
 
 # Run migrations during build (temporary, remove after successful deploy)
-RUN php artisan migrate --force || true
+RUN php artisan migrate --force  
+
 
 # Expose port 8000
 EXPOSE 8000
 
 # Start Laravel's built-in server
-CMD php artisan serve --host=0.0.0.0 --port=8000 
+CMD php artisan migrate --force
