@@ -33,4 +33,4 @@ RUN composer install --optimize-autoloader --no-dev
 EXPOSE 8000
 
 # Start Laravel's built-in server
-CMD php artisan db:seed --force
+CMD php artisan serve --host=0.0.0.0 --port=8000
