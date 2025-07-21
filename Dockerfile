@@ -27,7 +27,9 @@ RUN composer install --optimize-autoloader --no-dev
 
 # Run migrations during build (temporary, remove after successful deploy)
 
-
+# Ensure storage symlink and permissions for uploads
+RUN php artisan storage:link || true
+RUN chmod -R 775 /var/www/storage /var/www/bootstrap/cache
 
 # Expose port 8000
 EXPOSE 8000
