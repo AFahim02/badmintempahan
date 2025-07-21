@@ -38,8 +38,8 @@ class PaymentController extends Controller
                 'billPriceSetting' => 1,
                 'billPayorInfo' => 1,
                 'billAmount' => $reservation->fee * 100, // Convert to cents
-                'billReturnUrl' => route('payment.callback', ['reservation_id' => $reservation->id]), // Callback URL
-                'billCallbackUrl' => route('payment.callback', ['reservation_id' => $reservation->id]), // Callback URL
+                'billReturnUrl' => route('payment.callback', ['reservation_id' => $reservation->id], true), // Callback URL, force HTTPS
+                'billCallbackUrl' => route('payment.callback', ['reservation_id' => $reservation->id], true), // Callback URL, force HTTPS
                 'billEmail' => Auth::user()->email,
                 'billPhone' => $reservation->contact_number,
                 'billTo' => Auth::user()->name,
