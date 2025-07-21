@@ -87,7 +87,7 @@ class ReservationController extends Controller
         ]);
 
         // Use ngrok public URL for Toyyibpay callbacks
-        $ngrokUrl = 'https://20e135c65efa.ngrok-free.app'; // Update this if ngrok restarts
+        $ngrokUrl = 'https://8b208128bd54.ngrok-free.app'; // Update this if ngrok restarts
 
         // 🔁 Determine ToyyibPay environment
         $isSandbox = env('TOYYIBPAY_SANDBOX', false);
