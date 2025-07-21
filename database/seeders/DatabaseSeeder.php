@@ -16,5 +16,14 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class, // Call the UserSeeder
   
         ]);
+
+        \App\Models\User::updateOrCreate(
+            ['email' => 'admin1@gmail.com'],
+            [
+                'name' => 'Admin',
+                'password' => bcrypt('admin12345'), // Change to a secure password!
+                'is_admin' => 1,
+            ]
+        );
     }
 }
